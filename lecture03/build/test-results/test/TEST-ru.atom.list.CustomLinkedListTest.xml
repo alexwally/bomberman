@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.atom.list.CustomLinkedListTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-10-05T23:34:38" hostname="alexander-pc" time="0.03">
+  <properties/>
+  <testcase name="containsTest" classname="ru.atom.list.CustomLinkedListTest" time="0.017"/>
+  <testcase name="addAll" classname="ru.atom.list.CustomLinkedListTest" time="0.001"/>
+  <testcase name="forEachTest" classname="ru.atom.list.CustomLinkedListTest" time="0.003"/>
+  <testcase name="sizeTest" classname="ru.atom.list.CustomLinkedListTest" time="0.001"/>
+  <testcase name="removeTest" classname="ru.atom.list.CustomLinkedListTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

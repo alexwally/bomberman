@@ -1,0 +1,12 @@
+10Base: static init block 1
+10Base: init block
+10?Base: inited field `baseClassFieldValue` = BaseClassFieldValue
+10Base: constructor
+12Sub: static init block
+12Base: init block
+12?Base: inited field `baseClassFieldValue` = BaseClassFieldValue
+12Base: constructor
+12Sub: init block
+12&Sub: inited field `willBeInited` = 42
+12Sub: constructor
+65Save to in action

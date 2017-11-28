@@ -1,0 +1,4 @@
+rootProject.name = 'atom'
+include 'bomberman/frontend'
+include 'bomberman/matchmaker'
+include 'bomberman/gameservice'
