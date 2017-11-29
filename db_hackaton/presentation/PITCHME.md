@@ -107,7 +107,7 @@
   Response: 
       Code: 200
       Content-Type: text/plain
-      Body: wtfis.ru:8090/gs/12345
+      Body: wtfis.ru:8090/gameSession/12345
   ```
 В ответе пока возвращаем произвольный URL (игровой сервер нами еще не реализован)
 

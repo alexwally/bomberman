@@ -1,5 +1,6 @@
 package ru.atom.gameservice.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,12 +13,24 @@ public class GameSession {
     @Id
     private Integer id;
 
+    @Column(name = "playerCount", nullable = false)
+    private Integer playerCount;
+
     public Integer getId() {
         return id;
     }
 
     public GameSession setId(Integer id) {
         this.id = id;
+        return this;
+    }
+
+    public Integer getPlayerCount() {
+        return playerCount;
+    }
+
+    public GameSession setPlayerCount(Integer playerCount) {
+        this.playerCount = playerCount;
         return this;
     }
 

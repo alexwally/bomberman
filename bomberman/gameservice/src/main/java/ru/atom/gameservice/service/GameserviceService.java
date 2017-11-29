@@ -22,6 +22,7 @@ public class GameserviceService {
         nextId++;
         GameSession gameSession = new GameSession();
         gameSession.setId(id);
+        gameSession.setPlayerCount(playerCount);
         gameSessionDao.save(gameSession);
         return id;
     }

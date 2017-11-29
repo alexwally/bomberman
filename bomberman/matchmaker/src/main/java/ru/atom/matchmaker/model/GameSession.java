@@ -1,8 +1,7 @@
 package ru.atom.matchmaker.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,8 +11,10 @@ public class GameSession {
     public static final int PLAYERS_IN_GAME = 2;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Column(name = "playerCount", nullable = false)
+    private Integer playerCount;
 
     public Integer getId() {
         return id;
@@ -21,6 +22,15 @@ public class GameSession {
 
     public GameSession setId(Integer id) {
         this.id = id;
+        return this;
+    }
+
+    public Integer getPlayerCount() {
+        return playerCount;
+    }
+
+    public GameSession setPlayerCount(Integer playerCount) {
+        this.playerCount = playerCount;
         return this;
     }
 

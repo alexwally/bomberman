@@ -17,7 +17,7 @@ public class MatchmakerClient {
     public static Response create(int playerCount) throws IOException {
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
         Request request = new Request.Builder()
-                .post(RequestBody.create(mediaType, "playerCount={" + playerCount + "}"))
+                .post(RequestBody.create(mediaType, "playerCount=" + playerCount))
                 .url(PROTOCOL + HOST + PORT + "/game/create")
                 .build();
 

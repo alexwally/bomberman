@@ -21,7 +21,7 @@ public class MatchmakerService {
     public void saveUser(@NotNull String name, @NotNull Integer gameId) {
         User user = new User();
         user.setName(name);
-        user.setGs(gameSessionDao.getById(gameId));
+        user.setGameSession(gameSessionDao.getById(gameId));
         userDao.save(user);
     }
 

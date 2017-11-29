@@ -27,7 +27,7 @@ public class MatchMaker implements Runnable {
     public void run() {
         log.info("Started");
         List<User> candidates = new ArrayList<>(GameSession.PLAYERS_IN_GAME);
-        Response response;
+        Response response = null;
         Integer gameId = 0;
         User user = null;
         while (!Thread.currentThread().isInterrupted()) {
@@ -41,7 +41,7 @@ public class MatchMaker implements Runnable {
                 log.warn("Timeout reached");
             }
 
-            if (candidates.size() == 1) {
+            if (candidates.size() == 1 && user != null) {
                 try {
                     response = MatchmakerClient.create(GameSession.PLAYERS_IN_GAME);
                     gameId = Integer.parseInt(response.body().string());

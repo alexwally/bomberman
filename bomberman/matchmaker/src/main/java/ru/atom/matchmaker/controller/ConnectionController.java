@@ -49,6 +49,6 @@ public class ConnectionController {
             sleep(100);
         }
 
-        return ResponseEntity.ok().body(matchmakerService.getLoggedIn(name).getGs().getId().toString());
+        return ResponseEntity.ok().body(matchmakerService.getLoggedIn(name).getGameSession().getId().toString());
     }
 }

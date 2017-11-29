@@ -21,7 +21,7 @@ public class User {
     private String name;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private GameSession gs;
+    private GameSession gameSession;
 
     public Integer getId() {
         return id;
@@ -41,12 +41,12 @@ public class User {
         return this;
     }
 
-    public GameSession getGs() {
-        return gs;
+    public GameSession getGameSession() {
+        return gameSession;
     }
 
-    public User setGs(GameSession gs) {
-        this.gs = gs;
+    public User setGameSession(GameSession gameSession) {
+        this.gameSession = gameSession;
         return this;
     }
 
@@ -54,7 +54,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name=" + name +
-                ", game session='" + gs + '\'' +
+                ", game session='" + gameSession + '\'' +
                 '}';
     }
 }

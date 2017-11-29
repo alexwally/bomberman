@@ -19,12 +19,12 @@ configurations {
 }
 
 springBoot {
-    mainClass = "ru.atom.matchmaker.MatchmakerApp"
+    mainClass = "ru.atom.gameservice.Gameservice.App"
 }
 
 jar {
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    manifest { attributes 'Main-Class': 'ru.atom.matchmaker.MatchmakerApp' }
+    manifest { attributes 'Main-Class': 'ru.atom.gameservice.GameserviceApp' }
 }
 
 sourceSets {
