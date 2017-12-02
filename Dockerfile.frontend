@@ -5,5 +5,5 @@ WORKDIR /home/gradle/bomberman/
 RUN gradle :frontend:build
 
 FROM jetty:9.4.5-alpine
-COPY --from=builder /home/gradle/bomberman/frontend/build/libs/bomberman/*.war /var/lib/jetty/webapps/ROOT.war
+COPY --from=builder /home/gradle/bomberman/frontend/build/libs/*.war /var/lib/jetty/webapps/ROOT.war
 EXPOSE 8080
