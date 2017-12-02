@@ -6,15 +6,15 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/atom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/atom_main.iml" group="atom" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/atom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/atom_test.iml" group="atom" />
       <module fileurl="file://$PROJECT_DIR$/bomberman.iml" filepath="$PROJECT_DIR$/bomberman.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend.iml" group="bomberman/frontend" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_main.iml" group="bomberman/frontend" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_test.iml" group="bomberman/frontend" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice.iml" group="bomberman/gameservice" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_main.iml" group="bomberman/gameservice" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_test.iml" group="bomberman/gameservice" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker.iml" group="bomberman/matchmaker" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_main.iml" group="bomberman/matchmaker" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_test.iml" group="bomberman/matchmaker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/frontend/frontend.iml" filepath="$PROJECT_DIR$/.idea/modules/frontend/frontend.iml" group="frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/frontend/frontend_main.iml" filepath="$PROJECT_DIR$/.idea/modules/frontend/frontend_main.iml" group="frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/frontend/frontend_test.iml" filepath="$PROJECT_DIR$/.idea/modules/frontend/frontend_test.iml" group="frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gameservice/gameservice.iml" filepath="$PROJECT_DIR$/.idea/modules/gameservice/gameservice.iml" group="gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gameservice/gameservice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/gameservice/gameservice_main.iml" group="gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gameservice/gameservice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/gameservice/gameservice_test.iml" group="gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker.iml" filepath="$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker.iml" group="matchmaker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker_main.iml" filepath="$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker_main.iml" group="matchmaker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker_test.iml" filepath="$PROJECT_DIR$/.idea/modules/matchmaker/matchmaker_test.iml" group="matchmaker" />
     </modules>
   </component>
 </project>
