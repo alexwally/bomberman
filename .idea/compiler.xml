@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="atom_main" target="1.8" />
+      <module name="atom_test" target="1.8" />
+      <module name="bomberman_frontend_main" target="1.8" />
+      <module name="bomberman_frontend_test" target="1.8" />
+      <module name="bomberman_gameservice_main" target="1.8" />
+      <module name="bomberman_gameservice_test" target="1.8" />
+      <module name="bomberman_matchmaker_main" target="1.8" />
+      <module name="bomberman_matchmaker_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

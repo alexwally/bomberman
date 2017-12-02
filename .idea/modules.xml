@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/atom.iml" filepath="$PROJECT_DIR$/.idea/modules/atom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/atom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/atom_main.iml" group="atom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/atom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/atom_test.iml" group="atom" />
+      <module fileurl="file://$PROJECT_DIR$/bomberman.iml" filepath="$PROJECT_DIR$/bomberman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend.iml" group="bomberman/frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_main.iml" group="bomberman/frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/frontend/bomberman_frontend_test.iml" group="bomberman/frontend" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice.iml" group="bomberman/gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_main.iml" group="bomberman/gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/gameservice/bomberman_gameservice_test.iml" group="bomberman/gameservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker.iml" group="bomberman/matchmaker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_main.iml" group="bomberman/matchmaker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bomberman/matchmaker/bomberman_matchmaker_test.iml" group="bomberman/matchmaker" />
+    </modules>
+  </component>
+</project>

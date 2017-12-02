@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : technoatom : bomberman_frontend-1.0-SNAPSHOT.war">
+    <output-path>$PROJECT_DIR$/bomberman/frontend/build/libs/bomberman</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="bomberman/frontend-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Gradle : technoatom : bomberman_frontend-1.0-SNAPSHOT.war (exploded)" />
+    </root>
+  </artifact>
+</component>

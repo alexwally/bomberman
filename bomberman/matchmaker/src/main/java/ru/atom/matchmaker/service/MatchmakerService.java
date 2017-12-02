@@ -14,6 +14,8 @@ import javax.transaction.Transactional;
 public class MatchmakerService {
     @Autowired
     private UserDao userDao;
+
+    @Autowired
     private GameSessionDao gameSessionDao;
 
     @NotNull

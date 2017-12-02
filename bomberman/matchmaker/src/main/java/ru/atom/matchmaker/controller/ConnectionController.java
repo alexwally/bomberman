@@ -46,7 +46,7 @@ public class ConnectionController {
         UserQueue.getInstance().offer(user);
 
         while (matchmakerService.getLoggedIn(name) == null) {
-            sleep(100);
+            sleep(1000);
         }
 
         return ResponseEntity.ok().body(matchmakerService.getLoggedIn(name).getGameSession().getId().toString());

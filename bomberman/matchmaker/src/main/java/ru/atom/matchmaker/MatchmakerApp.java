@@ -1,16 +1,35 @@
 package ru.atom.matchmaker;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
+import org.springframework.core.task.TaskExecutor;
+import ru.atom.matchmaker.service.MatchmakerService;
 import ru.atom.matchmaker.thread.MatchMaker;
 
 @SpringBootApplication
 public class MatchmakerApp {
+    @Autowired
+    MatchmakerService matchmakerService;
+
     public static void main(String[] args) {
         SpringApplication.run(MatchmakerApp.class, args);
+    }
 
-        Thread matchMaker = new Thread(new MatchMaker());
-        matchMaker.setName("match-maker");
-        matchMaker.start();
+    @Bean
+    public TaskExecutor taskExecutor() {
+        return new SimpleAsyncTaskExecutor();
+    }
+
+    @Bean
+    public CommandLineRunner schedulingRunner(TaskExecutor executor) {
+        return new CommandLineRunner() {
+            public void run(String... args) throws Exception {
+                executor.execute(new MatchMaker(matchmakerService));
+            }
+        };
     }
 }
