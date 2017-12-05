@@ -1,0 +1,10 @@
+FROM gradle:jdk8 as builder
+USER root
+COPY . /home/gradle/bomberman
+WORKDIR /home/gradle/bomberman/
+RUN gradle :game_server:bootRepack
+
+FROM openjdk:8-jre-slim
+COPY --from=builder /home/gradle/bomberman/game_server/build/libs/game_server*.jar /bin/
+EXPOSE 8090
+CMD ["/bin/bash","-c", "java -jar /bin/game_server*.jar"]

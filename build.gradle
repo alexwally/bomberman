@@ -78,6 +78,7 @@ ext.libraries = [
         gson: "com.google.code.gson:gson:$gsonjVersion",
         postgres: "org.postgresql:postgresql:$postgresVersion",
         hibernate: "org.hibernate:hibernate-core:$hibernateVersion",
+        hibernate_entitymanager: "org.hibernate:hibernate-entitymanager:$hibernateVersion",
         jol: "org.openjdk.jol:jol-core:$jolVersion",
         jol_samples: "org.openjdk.jol:jol-samples:$jolVersion"
 ]

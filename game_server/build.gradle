@@ -7,7 +7,6 @@ dependencies {
     compile rootProject.libraries.okhttp
     compile rootProject.libraries.postgres
     compile rootProject.libraries.hibernate
-    compile rootProject.libraries.hibernate_entitymanager
     compile rootProject.libraries.jetbrainsAnnotations
 
 
@@ -20,16 +19,16 @@ configurations {
 }
 
 springBoot {
-    mainClass = "ru.atom.matchmaker.MatchmakerApp"
+    mainClass = "ru.atom.game_server.GameServerApp"
 }
 
 bootRepackage {
-    mainClass = "ru.atom.matchmaker.MatchmakerApp"
+    mainClass = "ru.atom.game_server.GameServerApp"
 }
 
 jar {
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    manifest { attributes 'Main-Class': 'ru.atom.matchmaker.MatchmakerApp' }
+    manifest { attributes 'Main-Class': 'ru.atom.game_server.GameServerApp' }
 }
 
 sourceSets {
