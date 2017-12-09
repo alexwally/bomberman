@@ -11,6 +11,7 @@ public class GameMechanics implements Tickable {
         //read inputQueue
         //clear inputQueue
         //doMechanics()
+        //новое состояние сразу кладется в реплику
         writeReplica();
     }
 

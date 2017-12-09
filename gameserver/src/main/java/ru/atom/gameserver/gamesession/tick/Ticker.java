@@ -2,6 +2,7 @@ package ru.atom.gameserver.gamesession.tick;
 
 
 import org.slf4j.LoggerFactory;
+import ru.atom.gameserver.gamesession.GameMechanics;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
@@ -14,11 +15,13 @@ public class Ticker {
     private static final long FRAME_TIME = 1000 / FPS;
     private Set<Tickable> tickables = new ConcurrentSkipListSet<>();
     private long tickNumber = 0;
+    private GameMechanics gameMechanics = new GameMechanics();
 
     public void gameLoop() {
         while (!Thread.currentThread().isInterrupted()) {
             long started = System.currentTimeMillis();
-            act(FRAME_TIME);
+            //act(FRAME_TIME);
+            gameMechanics.tick(FRAME_TIME);
             long elapsed = System.currentTimeMillis() - started;
             if (elapsed < FRAME_TIME) {
                 log.info("All tick finish at {} ms", elapsed);
