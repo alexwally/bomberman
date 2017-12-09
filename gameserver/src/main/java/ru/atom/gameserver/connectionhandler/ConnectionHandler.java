@@ -1,4 +1,4 @@
-package ru.atom.gameserver.ws;
+package ru.atom.gameserver.connectionhandler;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
@@ -8,7 +8,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 @Component
-public class EventHandler extends TextWebSocketHandler implements WebSocketHandler {
+public class ConnectionHandler extends TextWebSocketHandler implements WebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
