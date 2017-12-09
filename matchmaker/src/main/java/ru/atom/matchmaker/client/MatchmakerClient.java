@@ -27,7 +27,7 @@ public class MatchmakerClient {
     public static Response start(Integer gameId) throws IOException {
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
         Request request = new Request.Builder()
-                .post(RequestBody.create(mediaType, "gameId={" + gameId + "}"))
+                .post(RequestBody.create(mediaType, "gameId=" + gameId))
                 .url(PROTOCOL + HOST + PORT + "/game/start")
                 .build();
 
