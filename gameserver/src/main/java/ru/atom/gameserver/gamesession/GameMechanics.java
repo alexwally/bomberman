@@ -2,6 +2,8 @@ package ru.atom.gameserver.gamesession;
 
 import ru.atom.gameserver.gamesession.tick.Tickable;
 
+import static ru.atom.gameserver.gamesession.Replicator.writeReplica;
+
 public class GameMechanics implements Tickable {
 
     @Override
@@ -9,7 +11,7 @@ public class GameMechanics implements Tickable {
         //read inputQueue
         //clear inputQueue
         //doMechanics()
-        //writeReplica()
+        writeReplica();
     }
 
     private void doMechanics() {};
