@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.atom.gameserver.gameservice.service.GameserviceService;
+import ru.atom.gameserver.gamesession.GameMechanicsThread;
+import ru.atom.gameserver.gamesession.Games;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/game")
@@ -23,8 +27,29 @@ public class GameserviceController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> join(@RequestParam("playerCount") int playerCount) {
+    public ResponseEntity<String> gameCreate(@RequestParam("playerCount") int playerCount) {
+        Integer gameId = gameserviceService.createGameSession(playerCount);
+        Games.createGame(gameId, Optional.empty());
 
-        return ResponseEntity.ok().body(gameserviceService.createGameSession(playerCount).toString());
+        return ResponseEntity.ok().body(gameId.toString());
+    }
+
+    @RequestMapping(
+            path = "start",
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<String> gameStart(@RequestParam("gameId") Integer gameId) {
+        if (Games.containsGame(gameId)) {
+            GameMechanicsThread gameMechanicsThread = new GameMechanicsThread();
+            gameMechanicsThread.setId(gameId);
+            Thread gameMechanics = new Thread(gameMechanicsThread);
+            gameMechanics.setName("game-mechanics-" + gameId);
+            gameMechanics.start();
+        } else {
+            return ResponseEntity.badRequest().body("Game with that Id does not exist");
+        }
+
+        return ResponseEntity.ok().body(gameId.toString());
     }
 }

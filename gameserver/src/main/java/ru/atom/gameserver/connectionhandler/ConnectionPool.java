@@ -61,13 +61,13 @@ public class ConnectionPool {
                 .orElseGet(null);
     }
 
-    public void add(WebSocketSession session, String player) {
+    public void addPlayer(WebSocketSession session, String player) {
         if (pool.putIfAbsent(session, player) == null) {
             log.info("{} joined", player);
         }
     }
 
-    public void remove(WebSocketSession session) {
+    public void removePlayer(WebSocketSession session) {
         pool.remove(session);
     }
 }

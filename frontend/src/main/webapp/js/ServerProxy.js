@@ -1,5 +1,5 @@
 ServerProxy = Class.extend({
-    gameServerUrl: "34.229.24.192:35050",
+    gameServerUrl: "localhost:8090",
     matchMakerUrl: "localhost:8080/matchmaker/join",
     gameId: "1234",
 
@@ -52,7 +52,7 @@ ServerProxy = Class.extend({
                 console.log("Matchmaker request failed, use default gameId=" + that.gameId);
                 that.connectToGameServer(that.gameId, login);
             },
-            processData: false,
+            //processData: false
             type: 'POST',
             url: that.matchMakerUrl
         });

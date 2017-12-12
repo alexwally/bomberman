@@ -11,7 +11,7 @@ import java.io.IOException;
 public class EventClient {
     public static void main(String[] args) {
         // connection url
-        String uri = "ws://localhost:8090/events";
+        String uri = "ws://localhost:8090/game/connect?gameId=0&name=Alex";
 
         StandardWebSocketClient client = new StandardWebSocketClient();
         WebSocketSession session = null;
