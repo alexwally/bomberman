@@ -4,6 +4,7 @@ import ru.atom.gameserver.gamesession.geometry.Point;
 
 public class Player extends AbstractGameObject implements Movable {
     private int speed = 1;
+    private int bombs = 1;
 
     public Player(String name) {
         super(0, 0);
@@ -53,6 +54,14 @@ public class Player extends AbstractGameObject implements Movable {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getBombs() {
+        return bombs;
+    }
+
+    public void setBombs(int bombs) {
+        this.bombs = bombs;
     }
 
     public void setGameOver(boolean gameOver) {

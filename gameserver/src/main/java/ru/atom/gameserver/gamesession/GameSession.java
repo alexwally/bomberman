@@ -27,6 +27,13 @@ public class GameSession {
         }
     }
 
+    public Player getByName(String name) {
+        for (Player player : players) {
+            if (player.getName() == name) return player;
+        }
+        return null;
+    }
+
     public long getId() {
         return id;
     }

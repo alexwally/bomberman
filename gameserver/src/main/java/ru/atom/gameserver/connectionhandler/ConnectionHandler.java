@@ -14,6 +14,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import ru.atom.gameserver.gameservice.model.User;
 import ru.atom.gameserver.gameservice.service.GameserviceService;
+import ru.atom.gameserver.gamesession.GameMechanics;
 import ru.atom.gameserver.gamesession.InputQueue;
 import ru.atom.gameserver.gamesession.model.Player;
 
@@ -25,12 +26,14 @@ public class ConnectionHandler extends TextWebSocketHandler implements WebSocket
     @Autowired
     GameserviceService gameserviceService;
 
+    HashMap<String, String> params;
+
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         super.afterConnectionEstablished(session);
         System.out.println("Socket Connected: " + session);
 
-        HashMap<String, String> params = QueryProcessor.process(session.getUri().getQuery());
+        params = QueryProcessor.process(session.getUri().getQuery());
         ConnectionPool.getInstance().addPlayer(session, params.get("name"));
     }
 
@@ -39,7 +42,8 @@ public class ConnectionHandler extends TextWebSocketHandler implements WebSocket
         System.out.println("Received " + message.toString());
 
         Message inputMessage = JsonHelper.fromJson(message.getPayload(), Message.class);
-        InputQueue.getInstance().offer( ,inputMessage);
+        Player player = GameMechanics.getGameSession().getByName(params.get("name"));
+        InputQueue.getInstance().offer(new MessageWrapper(player,inputMessage));
     }
 
     /*public void sendMessage(Message replica) {
