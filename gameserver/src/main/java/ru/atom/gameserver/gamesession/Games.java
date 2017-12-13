@@ -12,9 +12,13 @@ public class Games {
         map.put(id, gameSession);
     }
 
-    public static void addGameSession(Integer id, Optional<GameSession> gameSession) { map.replace(id, gameSession); }
+    public static void addGameSession(Integer id, Optional<GameSession> gameSession) {
+        map.replace(id, gameSession);
+    }
 
-    public static boolean containsGame(Integer id) { return map.containsKey(id); }
+    public static boolean containsGame(Integer id) {
+        return map.containsKey(id);
+    }
 
     public static Collection<Optional<GameSession>> getAll() {
         return map.values();
