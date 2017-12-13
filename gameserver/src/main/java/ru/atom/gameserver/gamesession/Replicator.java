@@ -1,6 +1,7 @@
 package ru.atom.gameserver.gamesession;
 
 import ru.atom.gameserver.connectionhandler.Broker;
+import ru.atom.gameserver.connectionhandler.ConnectionHandler;
 import ru.atom.gameserver.connectionhandler.Topic;
 import ru.atom.gameserver.gamesession.model.Movable;
 import ru.atom.gameserver.gamesession.model.Player;
@@ -51,7 +52,6 @@ public class Replicator {
             tickables.forEach(tickable -> data.getObjects().add(tickable));
             data.setGameOver(player.isGameOver());
 
-            Broker.getInstance().send(player.getName(), Topic.REPLICA, data);
         }
 
     }

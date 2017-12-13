@@ -39,12 +39,12 @@ public class ConnectionHandler extends TextWebSocketHandler implements WebSocket
         System.out.println("Received " + message.toString());
 
         Message inputMessage = JsonHelper.fromJson(message.getPayload(), Message.class);
-        InputQueue.getInstance().offer(inputMessage);
+        InputQueue.getInstance().offer( ,inputMessage);
     }
 
-    public void sendMessage(Message replica) {
-
-    }
+    /*public void sendMessage(Message replica) {
+        Broker.getInstance().send(player.getName(), Topic.REPLICA, data);
+    }*/
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {

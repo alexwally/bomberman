@@ -1,4 +1,4 @@
-rootProject.name = 'atom'
+rootProject.name = 'bomberman'
 include 'frontend'
 include 'matchmaker'
 include 'gameserver'

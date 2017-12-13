@@ -5,8 +5,9 @@ import ru.atom.gameserver.gamesession.geometry.Point;
 public class Player extends AbstractGameObject implements Movable {
     private int speed = 1;
 
-    public Player(int x, int y) {
-        super(x, y);
+    public Player(String name) {
+        super(0, 0);
+        this.name = name;
     }
 
     private boolean gameOver = false;

@@ -7,6 +7,9 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -51,6 +54,10 @@ public class ConnectionPool {
 
     public String getPlayer(WebSocketSession session) {
         return pool.get(session);
+    }
+
+    public Collection<String> getPlayers() {
+        return pool.values();
     }
 
     public WebSocketSession getSession(String player) {
