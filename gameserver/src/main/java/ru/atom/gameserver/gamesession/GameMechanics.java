@@ -5,6 +5,7 @@ import ru.atom.gameserver.connectionhandler.Message;
 import ru.atom.gameserver.connectionhandler.MessageWrapper;
 import ru.atom.gameserver.connectionhandler.Topic;
 import ru.atom.gameserver.gamesession.model.Bomb;
+import ru.atom.gameserver.gamesession.model.Movable;
 import ru.atom.gameserver.gamesession.model.Player;
 import ru.atom.gameserver.gamesession.model.Tickable;
 
@@ -20,7 +21,7 @@ public class GameMechanics implements Runnable {
     private long tickNumber = 0;
 
     private Integer id;
-    GameSession gameSession;
+    private static GameSession gameSession;
     private List<MessageWrapper> actions = new ArrayList<>();
     private Queue<MessageWrapper> inputQueue = InputQueue.getInstance();
 
@@ -41,15 +42,27 @@ public class GameMechanics implements Runnable {
 
     private void doMechanics() {
         long started = System.currentTimeMillis();
-        //act(FRAME_TIME);
         for (MessageWrapper action : actions) {
-            if (action.getMessage().getTopic() == Topic.PLANT_BOMB) {
-                gameSession.tickables.add(new Bomb(action.getPlayer().getPosition().getX(),
-                        action.getPlayer().getPosition().getY()));
-            } else
-                if (action.getMessage().getTopic() == Topic.MOVE) {
+            boolean alreadyMove = false;
 
-                } else { }
+            for (Tickable tickable : gameSession.tickables)
+                tickable.tick(FRAME_TIME);
+
+            if (action.getMessage().getTopic() == Topic.PLANT_BOMB) {
+                int amountOfBombs = action.getPlayer().getBombs();
+                if (amountOfBombs != 0) {
+                    gameSession.tickables.add(new Bomb(action.getPlayer().getPosition().getX(),
+                            action.getPlayer().getPosition().getY()));
+                    action.getPlayer().setBombs(amountOfBombs-1);
+                }
+            }
+
+            if (action.getMessage().getTopic() == Topic.MOVE) {
+                if (alreadyMove = false) {
+                    action.getPlayer().move(Movable.Direction.valueOf(action.getMessage().getData()), FRAME_TIME);
+                }
+                alreadyMove = true;
+            }
         }
         long elapsed = System.currentTimeMillis() - started;
         if (elapsed < FRAME_TIME) {
@@ -66,8 +79,8 @@ public class GameMechanics implements Runnable {
         this.id = id;
     }
 
-    private void act(long elapsed) {
-        gameSession.tickables.forEach(tickable -> tickable.tick(elapsed));
+    public static GameSession getGameSession() {
+        return gameSession;
     }
 
     public long getTickNumber() {

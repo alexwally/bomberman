@@ -15,6 +15,7 @@ import java.io.IOException;
 import static java.lang.Thread.sleep;
 
 @Controller
+@CrossOrigin
 @RequestMapping("/matchmaker")
 public class ConnectionController {
 
