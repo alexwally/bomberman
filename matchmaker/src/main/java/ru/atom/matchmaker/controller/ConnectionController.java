@@ -5,10 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import ru.atom.matchmaker.model.User;
 import ru.atom.matchmaker.service.MatchmakerService;
 import ru.atom.matchmaker.thread.UserQueue;
@@ -29,6 +26,7 @@ public class ConnectionController {
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(origins = "origin")
     public ResponseEntity<String> join(@RequestParam("name") String name) throws IOException, InterruptedException {
         if (name.length() > 20) {
             return ResponseEntity.badRequest()

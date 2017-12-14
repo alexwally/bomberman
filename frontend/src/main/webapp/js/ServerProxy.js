@@ -41,6 +41,9 @@ ServerProxy = Class.extend({
             data: {
                 "name": login
             },
+            body: {
+
+            },
             dataType: 'text',
             success: function(data){
                 that.gameId=data;
@@ -54,7 +57,7 @@ ServerProxy = Class.extend({
             },
             //processData: false
             type: 'POST',
-            url: that.matchMakerUrl
+            url: "http://" + that.matchMakerUrl
         });
     },
 
