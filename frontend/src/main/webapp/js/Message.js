@@ -4,7 +4,7 @@ Messages = Class.extend({
     init: function () {
         this.handler['Pawn'] = this.handlePawn;
         this.handler['Bomb'] = this.handleBomb;
-        this.handler['Wood'] = this.handleTile;
+        this.handler['Brick'] = this.handleTile;
         this.handler['Wall'] = this.handleTile;
         this.handler['Fire'] = this.handleFire;
     },
@@ -30,14 +30,15 @@ Messages = Class.extend({
 
 
     handleReplica: function (msg) {
-        var gameObjects = JSON.parse(msg.data).objects;
+        console.log("REPLICA")
+        console.log(msg);
+        var gameObjects = JSON.parse(msg.data);
         var survivors = new Set();
 
         for (var i = 0; i < gameObjects.length; i++) {
             var obj = gameObjects[i];
             if (gMessages.handler[obj.type] === undefined)
                 continue;
-
             survivors.add(obj.id);
             gMessages.handler[obj.type](obj);
         }
@@ -45,6 +46,7 @@ Messages = Class.extend({
     },
 
     handlePossess: function (msg) {
+        console.log(msg);
         gInputEngine.possessed = parseInt(msg.data);
     },
 
@@ -83,14 +85,23 @@ Messages = Class.extend({
         var tile = gGameEngine.tiles.find(function (el) {
             return el.id === obj.id;
         });
-
-        var position = Utils.getEntityPosition(Utils.convertToBitmapPosition(obj.position));
+        var position = Utils.getEntityPosition(obj.position);
+        //var position = Utils.getEntityPosition(Utils.convertToBitmapPosition(obj.position));
         if (tile) {
             tile.material = obj.type;
         } else {
             tile = new Tile(obj.id, obj.type, position);
             gGameEngine.tiles.push(tile);
         }
+    },
+
+    hello: function (name) {
+        var template = {
+            topic: "HELLO",
+            data: {}
+        };
+        template.data = name;
+        return JSON.stringify(template);
     },
 
     handleFire: function (obj) {
