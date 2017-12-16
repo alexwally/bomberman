@@ -176,6 +176,8 @@ public class Ticker extends Thread {
                 Bar barBombHorizontalLeft1 = new Bar(Point.getLeft1Position(bomb.getPosition()));
                 Bar barBombHorizontalLeft2 = new Bar(Point.getLeft2Position(bomb.getPosition()));
 
+                Bar barBombCentral = new Bar(bomb.getPosition());
+
                 for (Wall wall : gameSession.getWalls()) {
                     Bar barWall = wall.getBar();
                     if (!barWall.isColliding(barBombHorizontalRight1)) {
@@ -248,6 +250,10 @@ public class Ticker extends Thread {
                         continue;
                     }
                     if (horizontalLeft && !barGirl.isColliding(barBombHorizontalLeft1)) {
+                        girlList.add(girl);
+                        continue;
+                    }
+                    if (!barGirl.isColliding(barBombCentral)) {
                         girlList.add(girl);
                     }
                     /*if (horizontalRight && (!barGirl.isColliding(barBombHorizontalRight2)
