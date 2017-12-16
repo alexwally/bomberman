@@ -3,7 +3,16 @@ package gs.ticker;
 import gs.geometry.Bar;
 import gs.geometry.Point;
 import gs.message.Topic;
-import gs.model.*;
+import gs.model.Bomb;
+import gs.model.Bonus;
+import gs.model.Brick;
+import gs.model.Fire;
+import gs.model.GameObject;
+import gs.model.GameSession;
+import gs.model.Girl;
+import gs.model.Movable;
+import gs.model.Tickable;
+import gs.model.Wall;
 import gs.network.Broker;
 import gs.storage.SessionStorage;
 import org.slf4j.LoggerFactory;
@@ -279,7 +288,8 @@ public class Ticker extends Thread {
             if (verticalUp) {
                 gameSession.addGameObject(new Fire(gameSession, Point.getUp1Position(bomb.getPosition())));
                 if (notBonus && isBonus()) {
-                    gameSession.addGameObject(new Bonus(gameSession, Point.getUp1Position(bomb.getPosition()), randomBonus()));
+                    gameSession.addGameObject(new Bonus(gameSession,
+                            Point.getUp1Position(bomb.getPosition()), randomBonus()));
                     notBonus = false;
                     System.out.println("BONUS");
                 }
@@ -291,7 +301,8 @@ public class Ticker extends Thread {
             if (verticalDown) {
                 gameSession.addGameObject(new Fire(gameSession, Point.getDown1Position(bomb.getPosition())));
                 if (notBonus && isBonus()) {
-                    gameSession.addGameObject(new Bonus(gameSession, Point.getDown1Position(bomb.getPosition()), randomBonus()));
+                    gameSession.addGameObject(new Bonus(gameSession,
+                            Point.getDown1Position(bomb.getPosition()), randomBonus()));
                     notBonus = false;
                     System.out.println("BONUS");
                 }
@@ -303,7 +314,8 @@ public class Ticker extends Thread {
             if (horizontalRight) {
                 gameSession.addGameObject(new Fire(gameSession, Point.getRight1Position(bomb.getPosition())));
                 if (notBonus && isBonus()) {
-                    gameSession.addGameObject(new Bonus(gameSession, Point.getRight1Position(bomb.getPosition()), randomBonus()));
+                    gameSession.addGameObject(new Bonus(gameSession,
+                            Point.getRight1Position(bomb.getPosition()), randomBonus()));
                     notBonus = false;
                     System.out.println("BONUS");
                 }
@@ -316,7 +328,8 @@ public class Ticker extends Thread {
                 gameSession.addGameObject(new Fire(gameSession, Point.getLeft1Position(bomb.getPosition())));
                 if (notBonus && isBonus()) {
                     System.out.println("BONUS");
-                    gameSession.addGameObject(new Bonus(gameSession, Point.getLeft1Position(bomb.getPosition()), randomBonus()));
+                    gameSession.addGameObject(new Bonus(gameSession,
+                            Point.getLeft1Position(bomb.getPosition()), randomBonus()));
                 }
                 /*if (gameSession.getGameObjectByPosition(Point.getLeft2Position(bomb.getPosition())) == null
                         || !Objects.equals("Wall",
