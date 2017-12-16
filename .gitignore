@@ -43,3 +43,5 @@ gradle-app.setting
 
 .idea
 *.iml
+gameservice/src/test/
+matchmaker/src/test/

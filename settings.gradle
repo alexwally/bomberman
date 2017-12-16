@@ -1,4 +1,4 @@
 rootProject.name = 'atom'
 include 'gameservice'
-include 'mm'
+include 'matchmaker'
 include 'frontend'
