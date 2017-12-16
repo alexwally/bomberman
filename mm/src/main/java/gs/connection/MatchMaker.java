@@ -25,6 +25,7 @@ public class MatchMaker extends Thread {
     @Override
     public void run() {
         gameId = Long.parseLong(client.createPost(PLAYERS_IN_GAME));
+        service.saveGameSession(gameId, PLAYERS_IN_GAME);
         logger.info("Game created id={}", gameId);
         List<String> candidates = new ArrayList<>(PLAYERS_IN_GAME);
         while (!Thread.currentThread().isInterrupted()) {
@@ -32,6 +33,7 @@ public class MatchMaker extends Thread {
                 String player = ConnectionQueue.getInstance().poll(10_000, TimeUnit.SECONDS);
                 candidates.add(player);
                 putJoin(player, gameId);
+                service.saveUser(player, gameId);
             } catch (InterruptedException e) {
                 logger.warn("Timeout reached");
             }
@@ -40,6 +42,7 @@ public class MatchMaker extends Thread {
                 //logger.info("game started id={}", gameId);
                 candidates.clear();
                 gameId = Long.parseLong(client.createPost(PLAYERS_IN_GAME));
+                service.saveGameSession(gameId, PLAYERS_IN_GAME);
             }
         }
     }
