@@ -1,1 +1,1 @@
-Good game
+GG WP
