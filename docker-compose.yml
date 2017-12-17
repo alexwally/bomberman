@@ -14,6 +14,9 @@ services:
       - "8080:8080"
     depends_on:
       - gameservice
+    environment:
+      - GAME_SERVER_ADDR=gameservice:8090
+    command: [ "/bin/bash", "-c", "wait-for-it $${GAME_SERVER_ADDR} -t 50 -- java -jar -DgameServerAddress=\"$${GAME_SERVER_ADDR}\" /bin/matchmaker*.jar" ]
   frontend:
     build:
       context: .

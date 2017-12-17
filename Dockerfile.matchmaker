@@ -5,6 +5,9 @@ WORKDIR /home/gradle/bomberman/
 RUN gradle :matchmaker:bootRepack
 
 FROM openjdk:8-jre-slim
+# for correct docker-compose startup
+COPY ./wait-for-it.sh /bin/wait-for-it
 COPY --from=builder /home/gradle/bomberman/matchmaker/build/libs/matchmaker*.jar /bin/
 EXPOSE 8080
-CMD ["/bin/bash","-c", "java -jar /bin/matchmaker*.jar"]
+ENV GAME_SERVER_ADDR=localhost:8090
+CMD ["/bin/bash","-c", "java -jar -DgameServerAddress=\"$GAME_SERVER_ADDR\" /bin/matchmaker*.jar"]

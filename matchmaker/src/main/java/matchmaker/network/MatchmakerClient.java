@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Component
 public class MatchmakerClient {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(MatchmakerClient.class);
-    private static final String URI = "http://localhost:8090/game";
+    private static final String URI = "http://" + System.getProperty("gameServerAddress", "localhost:8090") + "/game";
     private RestTemplate rest;
     private HttpHeaders headers;
     private HttpStatus status;
